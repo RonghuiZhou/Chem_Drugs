@@ -1,0 +1,9 @@
+﻿Drug Name,SMILES
+Aspirin,O=C(C1=C(OC(C)=O)C=CC=C1)O
+Morphine,OC1=C2O[C@@H]3[C@]45C2=C(C=C1)C[C@@H](N(CC5)C)[C@]4([H])C=C[C@@H]3O
+Apixaban,COC1=CC=C(N2N=C(C3=C2C(N(C4=CC=C(N5CCCCC5=O)C=C4)CC3)=O)C(N)=O)C=C1
+Lenalidomide,NC1=CC=CC2=C1CN(C2=O)C3CCC(NC3=O)=O
+Rivaroxaban,ClC1=CC=C(C(NC[C@H]2CN(C3=CC=C(N4CCOCC4=O)C=C3)C(O2)=O)=O)S1
+Ibuprofen,CC(CC1=CC=C(C(C(O)=O)C)C=C1)C
+Propranolol,OC(COC1=C2C=CC=CC2=CC=C1)CNC(C)C
+Nicotine,CN1C(CCC1)C2=CN=CC=C2
