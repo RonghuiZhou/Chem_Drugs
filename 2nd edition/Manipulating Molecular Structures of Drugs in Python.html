@@ -13309,10 +13309,15 @@ div#notebook {
     <span class="c1">###################################################</span>
     <span class="c1"># iterate through .smi, .mol and .sdf files</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">[</span><span class="n">smi_path</span><span class="p">,</span> <span class="n">mol_path</span><span class="p">,</span> <span class="n">sdf_path</span><span class="p">]:</span>
-        <span class="k">try</span><span class="p">:</span>            
-            <span class="n">w</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">SDWriter</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-            <span class="n">w</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">structure</span><span class="p">)</span>
-            <span class="n">w</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="n">smi_path</span><span class="p">:</span>
+                <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="s2">&quot;w+&quot;</span><span class="p">)</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">smiles</span><span class="p">)</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">w</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">SDWriter</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+                <span class="n">w</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">structure</span><span class="p">)</span>
+                <span class="n">w</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">.{item.rsplit(&#39;.&#39;,1)[1]} file saved&quot;</span><span class="p">)</span>
         <span class="k">except</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">{item.rsplit(&#39;.&#39;,1)[1]} file failed&quot;</span><span class="p">)</span>
